@@ -1,0 +1,233 @@
+.hero {
+  padding: 145px 0 120px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.heroContent h1 {
+  max-width: 900px;
+  color: var(--color-cream);
+  font-size: clamp(3.8rem, 7vw, 7rem);
+  letter-spacing: -0.045em;
+}
+
+.heroContent > p:last-child {
+  max-width: 600px;
+  margin-top: 28px;
+  font-size: 1.05rem;
+}
+
+.story {
+  padding: 110px 0;
+  background: var(--color-background);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.storyContent h2,
+.chefContent h2 {
+  color: var(--color-cream);
+  font-size: clamp(2.7rem, 4.5vw, 4.8rem);
+}
+
+.storyContent > p:not(.eyebrow) {
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.storyImage,
+.chefImage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.storyImage:hover .image,
+.chefImage:hover .image {
+  transform: scale(1.025);
+}
+
+.valuesSection {
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: #0f0e0c;
+}
+
+.valuesHeading {
+  max-width: 650px;
+  margin-bottom: 52px;
+}
+
+.valuesHeading h2 {
+  color: var(--color-cream);
+  font-size: clamp(2.7rem, 4vw, 4.5rem);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.valueCard {
+  min-height: 300px;
+  padding: 40px;
+}
+
+.valueCard + .valueCard {
+  border-left: 1px solid var(--color-border);
+}
+
+.valueCard > span {
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 2.7rem;
+}
+
+.valueCard h3 {
+  margin-top: 52px;
+  color: var(--color-cream);
+  font-size: 1.5rem;
+}
+
+.valueCard p {
+  margin-top: 14px;
+  font-size: 0.88rem;
+}
+
+.chefSection {
+  padding: 110px 0;
+  background: var(--color-surface);
+}
+
+.chefGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.chefContent > p:not(.eyebrow) {
+  max-width: 490px;
+  margin-top: 22px;
+}
+
+.chefContent blockquote {
+  max-width: 500px;
+  margin-top: 30px;
+  padding-left: 24px;
+  border-left: 2px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+  transition:
+    color var(--transition),
+    gap var(--transition);
+}
+
+.textLink:hover {
+  gap: 17px;
+  color: var(--color-gold);
+}
+
+.cta {
+  padding: 90px 0;
+  background: var(--color-background);
+}
+
+.ctaContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta h2 {
+  color: var(--color-cream);
+  font-size: clamp(2.7rem, 4vw, 4.5rem);
+}
+
+@media (max-width: 850px) {
+  .storyGrid,
+  .chefGrid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .storyImage,
+  .chefImage {
+    min-height: 500px;
+  }
+
+  .chefContent {
+    order: -1;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard {
+    min-height: auto;
+  }
+
+  .valueCard + .valueCard {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 0 80px;
+  }
+
+  .story,
+  .valuesSection,
+  .chefSection {
+    padding: 72px 0;
+  }
+
+  .storyImage,
+  .chefImage {
+    min-height: 380px;
+  }
+
+  .valueCard {
+    padding: 32px 24px;
+  }
+
+  .valueCard h3 {
+    margin-top: 32px;
+  }
+
+  .ctaContent {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

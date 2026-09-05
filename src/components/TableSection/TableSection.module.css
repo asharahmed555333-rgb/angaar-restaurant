@@ -1,0 +1,121 @@
+.section {
+  display: grid;
+  min-height: 620px;
+  grid-template-columns: minmax(0, 1.65fr) minmax(340px, 1fr);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.imageSide {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.imageSide:hover .image {
+  transform: scale(1.02);
+}
+
+.contentSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px clamp(32px, 6vw, 96px);
+}
+
+.sectionNumber {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.sectionNumber span {
+  color: var(--color-cream);
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 7vw, 6.5rem);
+  line-height: 1;
+}
+
+.sectionNumber i {
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.contentSide h2 {
+  color: var(--color-cream);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+}
+
+.eyebrow {
+  margin-top: 24px;
+  color: var(--color-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.description {
+  max-width: 480px;
+  margin-top: 20px;
+  font-size: 0.96rem;
+}
+
+.reservationLink {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  margin-top: 30px;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+  transition:
+    color var(--transition),
+    gap var(--transition);
+}
+
+.reservationLink:hover {
+  gap: 17px;
+  color: var(--color-gold);
+}
+
+@media (max-width: 850px) {
+  .section {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .imageSide {
+    min-height: 480px;
+  }
+
+  .contentSide {
+    padding: 64px var(--page-padding) 72px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imageSide {
+    min-height: 360px;
+  }
+
+  .sectionNumber span {
+    font-size: 4rem;
+  }
+
+  .sectionNumber i {
+    width: 65px;
+  }
+
+  .contentSide h2 {
+    font-size: 3.2rem;
+  }
+}

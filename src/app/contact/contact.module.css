@@ -1,0 +1,207 @@
+.hero {
+  padding: 135px 0 105px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin-inline: auto;
+  color: var(--color-cream);
+  font-size: clamp(3.8rem, 7vw, 7rem);
+  letter-spacing: -0.045em;
+}
+
+.hero > div > p:last-child {
+  max-width: 620px;
+  margin: 24px auto 0;
+}
+
+.contactSection {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contactCard {
+  min-height: 250px;
+  padding: 34px;
+}
+
+.contactCard + .contactCard {
+  border-left: 1px solid var(--color-border);
+}
+
+.contactCard > span {
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+}
+
+.contactCard h2 {
+  margin-top: 42px;
+  color: var(--color-cream);
+  font-size: 1.35rem;
+}
+
+.contactCard > div {
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.contactCard address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.contactCard a {
+  transition: color var(--transition);
+}
+
+.contactCard a:hover {
+  color: var(--color-gold);
+}
+
+.reservationSection {
+  padding: 110px 0;
+  background: #0f0e0c;
+  scroll-margin-top: 100px;
+}
+
+.reservationLayout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.5fr);
+  align-items: start;
+  gap: 72px;
+}
+
+.reservationContent {
+  position: sticky;
+  top: 130px;
+}
+
+.reservationContent h2 {
+  color: var(--color-cream);
+  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+}
+
+.reservationContent > p:not(.eyebrow) {
+  max-width: 430px;
+  margin-top: 22px;
+}
+
+.hours {
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
+}
+
+.hours h3 {
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hours dl {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.hours dl div {
+  display: grid;
+  gap: 4px;
+}
+
+.hours dt {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.hours dd {
+  color: var(--color-cream);
+  font-size: 0.88rem;
+}
+
+.locationSection {
+  padding: 90px 0;
+  background: var(--color-surface);
+}
+
+.locationLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.locationLayout h2 {
+  color: var(--color-cream);
+  font-size: clamp(2.7rem, 4vw, 4.5rem);
+}
+
+.locationLayout p:last-child {
+  max-width: 480px;
+  margin-top: 14px;
+}
+
+@media (max-width: 1000px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contactCard:nth-child(3) {
+    border-left: 0;
+  }
+
+  .contactCard:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .reservationLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .reservationContent {
+    position: static;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 95px 0 75px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactCard {
+    min-height: auto;
+  }
+
+  .contactCard + .contactCard {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+
+  .reservationSection {
+    padding: 72px 0;
+  }
+
+  .locationLayout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

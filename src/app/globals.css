@@ -1,0 +1,185 @@
+
+
+:root {
+  --color-background: #12110f;
+  --color-surface: #211c18;
+  --color-surface-light: #2b241e;
+  --color-primary: #c65a32;
+  --color-primary-dark: #a94425;
+  --color-gold: #d4a853;
+  --color-cream: #f6f0e5;
+  --color-white: #fff9ef;
+  --color-muted: #b8ada1;
+  --color-border: rgba(212, 168, 83, 0.25);
+
+--font-heading: var(--font-playfair), Georgia, "Times New Roman", serif;
+--font-body: var(--font-manrope), Arial, Helvetica, sans-serif;
+
+  --container-width: 1200px;
+  --page-padding: 24px;
+
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --radius-large: 16px;
+
+  --transition: 200ms ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-background);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+p {
+  color: var(--color-muted);
+}
+
+.container {
+  width: min(100% - (var(--page-padding) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 96px;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.buttonPrimary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.buttonPrimary:hover {
+  background: var(--color-primary-dark);
+}
+
+.buttonSecondary {
+  border-color: var(--color-gold);
+  background: transparent;
+  color: var(--color-white);
+}
+
+.buttonSecondary:hover {
+  background: var(--color-gold);
+  color: var(--color-background);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 20px;
+  }
+
+  .section {
+    padding-block: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.siteContent {
+  min-height: 70vh;
+}
