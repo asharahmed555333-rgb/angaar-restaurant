@@ -5,7 +5,7 @@ export default function RestaurantSchema() {
     name: "Angaar",
     description:
       "A premium Pakistani BBQ and traditional food restaurant in Lahore.",
-    url: "https://angaar-restaurant.vercel.app",
+    url: "https://angaar-restaurant-olive.vercel.app",
     telephone: "+92-42-3587-1234",
     email: "hello@angaar.pk",
     priceRange: "PKR 1,000–4,000",
@@ -17,9 +17,9 @@ export default function RestaurantSchema() {
       "Biryani",
     ],
     image: [
-      "https://angaar-restaurant.vercel.app/images/hero-bbq.webp",
-      "https://angaar-restaurant.vercel.app/images/mutton-biryani.webp",
-      "https://angaar-restaurant.vercel.app/images/mutton-karahi.webp",
+      "https://angaar-restaurant-olive.vercel.app/images/hero-bbq.webp",
+      "https://angaar-restaurant-olive.vercel.app/images/mutton-biryani.webp",
+      "https://angaar-restaurant-olive.vercel.app/images/mutton-karahi.webp",
     ],
     address: {
       "@type": "PostalAddress",
@@ -54,7 +54,7 @@ export default function RestaurantSchema() {
       },
     ],
     acceptsReservations: true,
-    menu: "https://angaar-restaurant.vercel.app/menu",
+    menu: "https://angaar-restaurant-olive.vercel.app/menu",
   };
 
   return (

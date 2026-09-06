@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://angaar-restaurant.vercel.app"),
+  metadataBase: new URL("https://angaar-restaurant-olive.vercel.app"),
 
   title: {
     default: "Angaar | Premium Pakistani BBQ Restaurant",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Angaar — Premium Pakistani BBQ",
     description:
       "Experience authentic Pakistani BBQ, karahi, biryani and traditional flavours cooked over live fire.",
-    url: "https://angaar-restaurant.vercel.app",
+    url: "https://angaar-restaurant-olive.vercel.app",
     siteName: "Angaar Restaurant",
     locale: "en_PK",
     type: "website",
