@@ -11,37 +11,37 @@ export const metadata: Metadata = {
 
 const galleryImages = [
   {
-    src: "/images/hero-bbq.png",
+    src: "/images/hero-bbq.webp",
     alt: "Pakistani barbecue cooking over glowing charcoal",
     label: "Live-Fire BBQ",
     className: styles.wide,
   },
   {
-    src: "/images/mutton-biryani.png",
+    src: "/images/mutton-biryani.webp",
     alt: "Traditional Pakistani mutton biryani in a copper handi",
     label: "Mutton Biryani",
     className: styles.standard,
   },
   {
-    src: "/images/restaurant-interior.png",
+    src: "/images/restaurant-interior.webp",
     alt: "Warm premium dining room inside Angaar Restaurant",
     label: "The Dining Room",
     className: styles.tall,
   },
   {
-    src: "/images/grill-seekh-kabab.png",
+    src: "/images/grill-seekh-kabab.webp",
     alt: "Seekh kababs grilling over hot charcoal",
     label: "Seekh Kabab",
     className: styles.standard,
   },
   {
-    src: "/images/mutton-karahi.png",
+    src: "/images/mutton-karahi.webp",
     alt: "Traditional mutton karahi served with fresh naan",
     label: "Mutton Karahi",
     className: styles.wide,
   },
   {
-    src: "/images/chef-grill.png",
+    src: "/images/chef-grill.webp",
     alt: "Angaar chef preparing Pakistani barbecue",
     label: "Crafted with Care",
     className: styles.tall,

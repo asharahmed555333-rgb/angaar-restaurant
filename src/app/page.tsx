@@ -21,7 +21,7 @@ export default function HomePage() {
     <main>
       <section className={styles.hero}>
         <Image
-          src="/images/hero-bbq.png"
+          src="/images/hero-bbq.webp"
           alt="Seekh kabab and chicken tikka cooking over glowing charcoal"
           fill
           priority
@@ -130,7 +130,7 @@ export default function HomePage() {
 
           <div className={styles.grillImageWrapper}>
             <Image
-              src="/images/grill-seekh-kabab.png"
+              src="/images/grill-seekh-kabab.webp"
               alt="Beef seekh kababs grilling over glowing charcoal"
               width={1600}
               height={900}

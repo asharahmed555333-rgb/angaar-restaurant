@@ -26,7 +26,7 @@ export default function Heritage() {
 
         <div className={styles.imageWrapper}>
           <Image
-            src="/images/chef-grill.png"
+            src="/images/chef-grill.webp"
             alt="Chef preparing charcoal-grilled Pakistani barbecue at Angaar"
             width={1536}
             height={1024}

@@ -4,17 +4,17 @@ import styles from "./GalleryPreview.module.css";
 
 const galleryImages = [
   {
-    src: "/images/grill-seekh-kabab.png",
+    src: "/images/grill-seekh-kabab.webp",
     alt: "Seekh kababs cooking over glowing charcoal",
     className: styles.largeImage,
   },
   {
-    src: "/images/restaurant-interior.png",
+    src: "/images/restaurant-interior.webp",
     alt: "Warm interior of Angaar Restaurant",
     className: styles.topImage,
   },
   {
-    src: "/images/chef-grill.png",
+    src: "/images/chef-grill.webp",
     alt: "Angaar chef preparing Pakistani barbecue",
     className: styles.bottomImage,
   },

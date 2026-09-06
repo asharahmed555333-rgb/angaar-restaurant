@@ -1,24 +1,54 @@
 "use client";
 
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import styles from "./ReservationForm.module.css";
 
+const formspreeEndpoint = "https://formspree.io/f/xjyvodob";
+
 export default function ReservationForm() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const name = formData.get("name");
-    const phone = formData.get("phone");
-    const email = formData.get("email");
-    const date = formData.get("date");
-    const time = formData.get("time");
-    const guests = formData.get("guests");
-    const message = formData.get("message");
+    const name = String(formData.get("name") || "");
+    const phone = String(formData.get("phone") || "");
+    const email = String(formData.get("email") || "");
+    const date = String(formData.get("date") || "");
+    const time = String(formData.get("time") || "");
+    const guests = String(formData.get("guests") || "");
+    const message = String(formData.get("message") || "");
 
-    const reservationMessage = `
+    setIsSubmitting(true);
+    setStatusMessage("");
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Reservation could not be sent.");
+      }
+
+      setIsSuccess(true);
+      setStatusMessage(
+        "Thank you! Your reservation request has been sent successfully.",
+      );
+
+      form.reset();
+
+      const reservationMessage = `
 Assalam-o-Alaikum, I would like to reserve a table at Angaar Restaurant.
 
 Name: ${name}
@@ -28,15 +58,23 @@ Date: ${date}
 Time: ${time}
 Guests: ${guests}
 Special Request: ${message || "None"}
-    `.trim();
+      `.trim();
 
-    const restaurantWhatsAppNumber = "923001234567";
+      const restaurantWhatsAppNumber = "923190367965"; // Replace with the restaurant's WhatsApp number
 
-    const whatsappUrl = `https://wa.me/${restaurantWhatsAppNumber}?text=${encodeURIComponent(
-      reservationMessage,
-    )}`;
+      const whatsappUrl = `https://wa.me/${restaurantWhatsAppNumber}?text=${encodeURIComponent(
+        reservationMessage,
+      )}`;
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    } catch {
+      setIsSuccess(false);
+      setStatusMessage(
+        "Sorry, your reservation could not be sent. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -149,14 +187,33 @@ Special Request: ${message || "None"}
         </div>
       </div>
 
-      <button type="submit" className={styles.submitButton}>
-        Send Reservation on WhatsApp
+      <button
+        type="submit"
+        className={styles.submitButton}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending Reservation..." : "Send Reservation Request"}
         <span aria-hidden="true">→</span>
       </button>
 
-      <p className={styles.note}>
-        Your booking will be confirmed by the restaurant through WhatsApp.
-      </p>
+      {statusMessage && (
+        <p
+          className={styles.note}
+          role="status"
+          aria-live="polite"
+          style={{
+            color: isSuccess ? "#d4a853" : "#ff7b6b",
+          }}
+        >
+          {statusMessage}
+        </p>
+      )}
+
+      {!statusMessage && (
+        <p className={styles.note}>
+          Your request will be sent by email and opened in WhatsApp.
+        </p>
+      )}
     </form>
   );
 }

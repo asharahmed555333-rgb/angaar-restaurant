@@ -17,9 +17,9 @@ export default function RestaurantSchema() {
       "Biryani",
     ],
     image: [
-      "https://angaar-restaurant.vercel.app/images/hero-bbq.png",
-      "https://angaar-restaurant.vercel.app/images/mutton-biryani.png",
-      "https://angaar-restaurant.vercel.app/images/mutton-karahi.png",
+      "https://angaar-restaurant.vercel.app/images/hero-bbq.webp",
+      "https://angaar-restaurant.vercel.app/images/mutton-biryani.webp",
+      "https://angaar-restaurant.vercel.app/images/mutton-karahi.webp",
     ],
     address: {
       "@type": "PostalAddress",

@@ -7,7 +7,7 @@ export default function TableSection() {
     <section className={styles.section}>
       <div className={styles.imageSide}>
         <Image
-          src="/images/restaurant-interior.png"
+          src="/images/restaurant-interior.webp"
           alt="Warm and elegant dining room inside Angaar Restaurant"
           fill
           sizes="(max-width: 850px) 100vw, 62vw"

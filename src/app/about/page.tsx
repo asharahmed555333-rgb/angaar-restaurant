@@ -78,7 +78,7 @@ export default function AboutPage() {
 
           <div className={styles.storyImage}>
             <Image
-              src="/images/restaurant-interior.png"
+              src="/images/restaurant-interior.webp"
               alt="Warm dining room inside Angaar Restaurant"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
@@ -111,7 +111,7 @@ export default function AboutPage() {
         <div className={`container ${styles.chefGrid}`}>
           <div className={styles.chefImage}>
             <Image
-              src="/images/chef-grill.png"
+              src="/images/chef-grill.webp"
               alt="Angaar chef preparing food over a charcoal grill"
               fill
               sizes="(max-width: 800px) 100vw, 55vw"
